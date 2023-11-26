@@ -1,12 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Main from './components/Main/Main';
-
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import BookDetailpage from './components/BookDetailPage/BookDetailpage';
 const App: React.FC = ()  =>{
   return (
     <div className="App">
-      <Main/>
+      <Router>
+       <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/book/:id" element={<BookDetailpage />}/> 
+      </Routes>
+    </Router>
     </div>
   );
 }
